@@ -1,5 +1,6 @@
 # ESP32 RGB Shades
-==================
+![ESP32 RGB Shades front printed circuit board render](https://github.com/beforeyouknowit/ESP32-RGB-Shades/blob/main/renders/front.png "ESP32 RGB Shades front printed circuit board render")
+![ESP32 RGB Shades rear printed circuit board render](https://github.com/beforeyouknowit/ESP32-RGB-Shades/blob/main/renders/rear.png "ESP32 RGB Shades rear printed circuit board render")
 
 This repo currently represents an electronics update, based on the  ESP32 Pico Mini, as a redesign of [macetech/RGBShades](https://github.com/macetech/RGBShades) from 2015.
 
