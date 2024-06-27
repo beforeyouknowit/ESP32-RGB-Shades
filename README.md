@@ -1,21 +1,28 @@
-Pull Requests - For new effects, please target the "experimental" branch. We'll try to throw everything in experimental, and bubble finished effects into the master branch.
+# ESP32 RGB Shades
+==================
 
-RGBShades
-=========
+This repo currently represents an electronics update, based on the  ESP32 Pico Mini, as a redesign of [macetech/RGBShades](https://github.com/macetech/RGBShades) from 2015.
 
-Firmware for RGB Shades (Arduino-compatible sunglasses with 16x5 matrix of WS2812B pixels)
+I was one of the Kickstarter backers of macetech's original campaign for "RGB Shades", described here: https://www.kickstarter.com/projects/macetech/rgb-led-shades
 
-Requires FastLED 2.1 or higher, available here: https://github.com/FastLED/FastLED
+Redesigned in KiCad 8.x, based on original Eagle files from Macetech's website.
 
-RGB Shades described here: https://www.kickstarter.com/projects/macetech/rgb-led-shades
+## Features
+New electronics include:
+- USB-C PD via STUSB4500 IC, which negotiates with USB-C PD supplies (e.g. modern power bank batteries and wall adapters) for 20V output, up to 5A, or 100W.
+- TDK ICS-43434 microphone, with I2S digital output, for onboard audio analysis and beat detection.
+- Jumper for selecting microphone digital output as left (default) or right channel audio over I2S.
+- 5V, 1.5A linear voltage regulator for powering WS2812B LEDs from 20V USB-C PD supply.
+- 3.3V, 1.0A linear voltage regulator for powering onboard ICs.
+- Slight changes to rear ear-stem geometry to accommodate new USB-C PD IC and passives.
 
-When downloading ZIP file, remove "-master" at the end of the folder name before attempting
-to open in the Arduino IDE
+What hasn't changed:
+- Same power switch.
+- Same pushbuttons. (Now labeled as "Animate" and "Brightness".)
+- Same CP2102N USB to UART, with "full remote reset" capabilities, making firmware flashing just as easy.
+- Same 0.1" (DuPont connector/header) through-holes for direct CP2102N debug, e.g. for bypassing USB.
+- Same JST connector to existing RGBShades display, i.e. the front part of the glasses assembly.
+- Same glasses assembly hardware positions; meant as a direct upgrade for existing RGBShades owners.
 
-If your RGB Shades were purchased before July 2015:
-This version has the standard Arduino bootloader. R9 and R10 near the control buttons will be present.
-Select the “Arduino Pro or Pro Mini” option. Then, go back into the Tools menu and find the Processor option and select “ATmega328 (5V, 16MHz)”.
-
-If your RGB Shades were purchased after July 2015:
-This version has the Optiboot bootloader. R9 and 10 near the control buttons will be missing.
-Select the “Arduino Mini” option. Then, go back into the Tools menu and find the Processor option and select “ATmega328”.
+## License
+This project is licensed under CERN-OHL-S 2.0 or later version. See the LICENSE file for details.
